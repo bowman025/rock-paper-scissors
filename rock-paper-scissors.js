@@ -11,7 +11,7 @@ console.log(getComputerChoice());
 
 sign = prompt("Pick One: Rock, Paper or Scissors");
 
-function getHumanChoice(prompt) {
+function getHumanChoice() {
     if (sign === "Rock")
         return("Rock");
     if (sign === "Paper")
