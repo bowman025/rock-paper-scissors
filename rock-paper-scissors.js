@@ -8,12 +8,12 @@ function getComputerChoice() {
     }
 
 function getHumanChoice() {
-    sign = prompt("Pick One: Rock, Paper or Scissors.").toLowerCase();
-    if (sign === "rock")
+    choice = prompt("Pick One: Rock, Paper or Scissors.").toLowerCase();
+    if (choice === "rock")
         return("Rock");
-    else if (sign === "paper")
+    else if (choice === "paper")
         return("Paper");
-    else if (sign === "scissors")
+    else if (choice === "scissors")
         return("Scissors");
     else
         return("Invalid Response");
@@ -66,4 +66,9 @@ function playGame () {
     }
 }
 
+function result () {
+    console.log("Final score: You (" + humanScore + ")" + " vs. (" + computerScore + ") Computer.")
+}
+
 playGame ()
+result ()
