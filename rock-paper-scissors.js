@@ -7,14 +7,13 @@ function getComputerChoice() {
         return("Scissors");
     }
 
-sign = prompt("Pick One: Rock, Paper or Scissors.").toLowerCase();
-
 function getHumanChoice() {
+    sign = prompt("Pick One: Rock, Paper or Scissors.").toLowerCase();
     if (sign === "rock")
         return("Rock");
-    if (sign === "paper")
+    else if (sign === "paper")
         return("Paper");
-    if (sign === "scissors")
+    else if (sign === "scissors")
         return("Scissors");
     else
         return("Invalid Response");
@@ -24,7 +23,8 @@ let computerScore = 0;
 let humanScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
     if (humanChoice === "Rock" && computerChoice === "Scissors") {
         console.log("You picked " + humanChoice + "." + "\nThe computer picked " + computerChoice + "." + "\nYou win! Rock beats Scissors." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
         }
@@ -52,12 +52,18 @@ function playRound(humanChoice, computerChoice) {
     else if (humanChoice === "Paper" && computerChoice === "Rock") {
         console.log("You picked " + humanChoice + "." + "\nThe computer picked " + computerChoice + "." + "\nYou win! Paper beats Rock." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
         }
+    else if (humanChoice = "Invalid Response") {
+        console.log("You didn't pick one of the three options.")
+        }
     else {
-        console.log("Sorry, I got confused. Let's try again.")
+        console.log("Sorry, something went wrong. Let's try again.")
         }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+function playGame () {
+    for (let i = 0; i < 5; i++) {
+    playRound();
+    }
+}
 
-playRound(humanChoice, computerChoice);
+playGame ()
