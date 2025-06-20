@@ -18,13 +18,16 @@ let computerScore = 0;
 let humanScore = 0;
 
 function getComputerChoice() {
-    if (Math.random() <= 0.333)
-        return("Rock");
-    else if (Math.random() >= 0.334 <= 0.666)
-        return("Paper");
-    else 
-        return("Scissors");
-    }
+    choice = Math.floor(Math.random() * 3) + 1;
+    if (choice == 1)
+        return "Rock";
+    else if (choice == 2)
+        return "Paper";
+    else if (choice == 3)
+        return "Scissors";
+    else
+        return "Error";
+}
 
 function getHumanChoice() {
     buttons.forEach((button) => {
