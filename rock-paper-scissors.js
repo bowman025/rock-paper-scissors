@@ -14,8 +14,8 @@ scoreState.appendChild(currentScore);
 
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
-let computerScore = 0;
 let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     choice = Math.floor(Math.random() * 3) + 1;
