@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="rock-paper-scissors.js"></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Rock beats Scissors, Scissors beats Paper, Paper beats Rock. Pick one of those three options and try you luck at beating the computer.</p>
-    <script src="rock-paper-scissors.js"></script>
+    <div id="container">
+        <h1>Rock. Paper. Scissors</h1>
+        <p>Try to beat the Computer in a Best-of-Nine Match.</p>
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </div>
+    <div class="score-state"></div>
 </body>
 </html>

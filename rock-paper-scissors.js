@@ -7,7 +7,7 @@ function getComputerChoice() {
         return("Scissors");
     }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
     choice = prompt("Pick One: Rock, Paper or Scissors.").toLowerCase();
     if (choice === "rock")
         return("Rock");
@@ -17,14 +17,25 @@ function getHumanChoice() {
         return("Scissors");
     else
         return("Invalid Response");
-}
+} */
 
 let computerScore = 0;
 let humanScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
+let buttons = Array.from(document.querySelectorAll("button"));
+
+function getHumanChoice() {
+    buttons.forEach((button) => button.addEventListener("click", () => console.log(button.id.charAt(0).toUpperCase() + button.id.slice(1))));
+};
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+console.log(computerChoice)
+console.log(buttons)
+console.log(humanChoice);
+
+
+/* function playRound(humanChoice, computerChoice) {
     if (humanChoice === "Rock" && computerChoice === "Scissors") {
         console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou win! Rock beats Scissors." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
         }
@@ -78,3 +89,5 @@ function result () {
 
 playGame ()
 result ()
+
+playRound(humanChoice, computerChoice) */
