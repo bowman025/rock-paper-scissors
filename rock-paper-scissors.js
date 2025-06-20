@@ -60,13 +60,19 @@ function displayWinner(humanScore, computerScore) {
         currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. You win!`;
         buttons.forEach((button) => {
             button.disabled = true;
-            playAgain.style.display = "inline";
         });
+        playAgain.style.display = "inline";
+        resetPage();
     } else if (computerScore == 5 && humanScore < 5) {
         currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. Computer wins!`;
         buttons.forEach((button) => {
             button.disabled = true;
-            playAgain.style.display = "inline";
         });
+        playAgain.style.display = "inline";
+        resetPage();
     };
+};
+
+function resetPage() {
+    playAgain.addEventListener("click", () => location.reload());
 };

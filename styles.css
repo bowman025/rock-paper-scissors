@@ -54,7 +54,7 @@ button:active {
 .score-state {
     display: none;
     width: 600px;
-    height: 120px;
+    height: auto;
     padding: 10px;
     margin: 40px;
     border-radius: 10px;
@@ -72,6 +72,8 @@ button:active {
 }
 
 .play-again {
+    font-size: large;
+    font-weight: 600;
     color: ghostwhite;
     display: none;
     padding: 15px 30px;
