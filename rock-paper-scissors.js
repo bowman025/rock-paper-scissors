@@ -25,38 +25,17 @@ console.log(humanChoice);
 
 
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou win! Rock beats Scissors." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Rock" && computerChoice === "Paper") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou lose! Paper beats Rock." + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + ++computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Rock" && computerChoice === "Rock") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nIt's a tie!" + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Scissors" && computerChoice === "Scissors") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nIt's a tie!" + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou win! Scissors beats Paper." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Scissors" && computerChoice === "Rock") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou lose! Rock beats Scissors." + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + ++computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Paper" && computerChoice === "Scissors") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou lose! Scissors beats Paper." + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + ++computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Paper" && computerChoice === "Paper") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nIt's a tie!" + "\nCurrent score: You " + "(" + humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        console.log("You picked " + humanChoice + "." + "\nThe Computer picked " + computerChoice + "." + "\nYou win! Paper beats Rock." + "\nCurrent score: You " + "(" + ++humanScore + ")" + " vs. " + "(" + computerScore + ")" + " Computer.")
-        }
-    else if (humanChoice = "Invalid Response") {
-        console.log("You didn't pick one of the three options.")
-        }
-    else {
-        console.log("Sorry, something went wrong. Let's try again.")
+    if (humanChoice == "Scissors" && computerChoice == "Paper" || humanChoice == "Rock" && computerChoice == "Scissors" || humanChoice == "Paper" && computerChoice == "Rock") {
+        currentState.textContent = "You picked " + humanChoice + ". The Computer picked " + computerChoice + ". " + humanChoice + " beats " + computerChoice + "!";
+        currentScore.textContent = `Current score: You: (${++humanScore}) vs. (${computerScore}) Computer`;
+        } else if (humanChoice == "Rock" && computerChoice == "Paper" || humanChoice == "Scissors" && computerChoice == "Rock" || humanChoice == "Paper" && computerChoice == "Scissors") {
+        currentState.textContent = "You picked " + humanChoice + ". The Computer picked " + computerChoice + ". " + computerChoice + " beats " + humanChoice + "!";
+        currentScore.textContent = `Current score: You: (${humanScore}) vs. (${++computerScore}) Computer`;
+        } else if (humanChoice == "Rock" && computerChoice == "Rock" || humanChoice == "Scissors" && computerChoice == "Scissors" || humanChoice == "Paper" && computerChoice == "Paper") {
+        currentState.textContent = "You picked " + humanChoice + ". The Computer picked " + computerChoice + ". It's a tie!";
+        currentScore.textContent = `Current score: You: (${humanScore}) vs. (${computerScore}) Computer`;
+        } else {
+        currentState.textContent ="Oops, something went wrong. Let's try again.";
         }
 }
 
