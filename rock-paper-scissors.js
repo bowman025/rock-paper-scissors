@@ -1,14 +1,15 @@
 const container = document.querySelector("#container");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".choice");
 const scoreState = document.querySelector(".score-state");
 const currentState = document.createElement("p");
 const currentScore = document.createElement("p");
+const playAgain = document.querySelector(".play-again");
 
 currentState.classList.add("currentState");
 scoreState.appendChild(currentState);
 
 currentScore.classList.add("currentScore");
-currentScore.style.color = "salmon";
+currentScore.style.color = "rgb(200, 65, 50)";
 currentScore.style.fontWeight = "600";
 scoreState.appendChild(currentScore);
 
@@ -59,11 +60,13 @@ function displayWinner(humanScore, computerScore) {
         currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. You win!`;
         buttons.forEach((button) => {
             button.disabled = true;
+            playAgain.style.display = "inline";
         });
     } else if (computerScore == 5 && humanScore < 5) {
         currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. Computer wins!`;
         buttons.forEach((button) => {
             button.disabled = true;
+            playAgain.style.display = "inline";
         });
     };
 };

@@ -1,5 +1,5 @@
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 * {
@@ -11,6 +11,7 @@ body {
 }
 
 #container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -33,20 +34,21 @@ p {
     display: inline;
 }
 
-button {
+.choice {
+    color: ghostwhite;
+    background-color: salmon;
     padding: 15px 30px;
     margin: 10px 20px 20px;
     border: 1px solid salmon;
     border-radius: 10px;
-    background-color: ghostwhite;
 }
 
 button:hover {
-    background-color: lightgray;
+    background-color: rgb(200, 65, 50);
 }
 
 button:active {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(135, 30, 20);
 }
 
 .score-state {
@@ -59,4 +61,31 @@ button:active {
     border: 2px solid salmon;
     box-shadow: 15px 15px 5px lightgrey;
     background-color: whitesmoke;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin: 40px;
+}
+
+.play-again {
+    color: ghostwhite;
+    display: none;
+    padding: 15px 30px;
+    border: 2px solid salmon;
+    background-color: salmon;
+    border-radius: 10px;
+}
+
+.play-again:hover {
+    background-color: rgb(200, 65, 50);
+    border: 2px solid rgb(200, 65, 50);
+}
+
+.play-again:active {
+    background-color: rgb(135, 30, 20);
+    border: 2px solid rgb(135, 30, 20);
 }
