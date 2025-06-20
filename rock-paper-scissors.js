@@ -14,8 +14,13 @@ let humanScore = 0;
 let buttons = Array.from(document.querySelectorAll("button"));
 
 function getHumanChoice() {
-    buttons.forEach((button) => button.addEventListener("click", () => console.log(button.id.charAt(0).toUpperCase() + button.id.slice(1))));
-};
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            playRound((button.id.charAt(0).toUpperCase() + button.id.slice(1)), getComputerChoice());
+            displayWinner(humanScore, computerScore);
+        });
+    });
+}
 
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
