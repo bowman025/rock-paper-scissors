@@ -1,3 +1,22 @@
+const container = document.querySelector("#container");
+const buttons = document.querySelectorAll("button");
+const scoreState = document.querySelector(".score-state");
+const currentState = document.createElement("p");
+const currentScore = document.createElement("p");
+
+currentState.classList.add("currentState");
+scoreState.appendChild(currentState);
+
+currentScore.classList.add("currentScore");
+currentScore.style.color = "salmon";
+currentScore.style.fontWeight = "600";
+scoreState.appendChild(currentScore);
+
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+let computerScore = 0;
+let humanScore = 0;
+
 function getComputerChoice() {
     if (Math.random() <= 0.333)
         return("Rock");
@@ -6,12 +25,6 @@ function getComputerChoice() {
     else 
         return("Scissors");
     }
-
-
-let computerScore = 0;
-let humanScore = 0;
-
-let buttons = Array.from(document.querySelectorAll("button"));
 
 function getHumanChoice() {
     buttons.forEach((button) => {
@@ -22,11 +35,6 @@ function getHumanChoice() {
     });
 }
 
-let computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
-console.log(computerChoice)
-console.log(buttons)
-console.log(humanChoice);
 
 
 function playRound(humanChoice, computerChoice) {
