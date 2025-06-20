@@ -38,9 +38,8 @@ function getHumanChoice() {
     });
 }
 
-
-
 function playRound(humanChoice, computerChoice) {
+    scoreState.style.display = "block";
     if (humanChoice == "Scissors" && computerChoice == "Paper" || humanChoice == "Rock" && computerChoice == "Scissors" || humanChoice == "Paper" && computerChoice == "Rock") {
         currentState.textContent = "You picked " + humanChoice + ". The Computer picked " + computerChoice + ". " + humanChoice + " beats " + computerChoice + "!";
         currentScore.textContent = `Current score: You: (${++humanScore}) vs. (${computerScore}) Computer`;
@@ -55,17 +54,16 @@ function playRound(humanChoice, computerChoice) {
         }
 }
 
-function result () {
-    console.log("Final score: You (" + humanScore + ")" + " vs. (" + computerScore + ") Computer.");
-    if (humanScore < computerScore)
-        console.log("The Computer won! Better luck next time.")
-    else if (humanScore > computerScore)
-        console.log("You won! Congratulations!")
-    else
-        console.log("It's a tie!");
-}
-
-playGame ()
-result ()
-
-playRound(humanChoice, computerChoice)
+function displayWinner(humanScore, computerScore) {
+    if (humanScore == 5 && computerScore < 5) {
+        currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. You win!`;
+        buttons.forEach((button) => {
+            button.disabled = true;
+        });
+    } else if (computerScore == 5 && humanScore < 5) {
+        currentScore.textContent = `Final score: You: (${humanScore}) vs. (${computerScore}) Computer. Computer wins!`;
+        buttons.forEach((button) => {
+            button.disabled = true;
+        });
+    };
+};
